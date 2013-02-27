@@ -1,0 +1,90 @@
+package de.bht.fpa.mail.s769161.imapnavigation.handler;
+
+import java.util.List;
+
+import javax.mail.MessagingException;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+
+import de.bht.fpa.mail.common.MailHelper;
+import de.bht.fpa.mail.common.PersistenceManager;
+import de.bht.fpa.mail.common.model.Account;
+import de.bht.fpa.mail.common.model.Folder;
+
+public class IMAPHandler {
+
+	private Account account;
+
+	public void synchronizeFolders() throws Exception {
+		System.out.println("begin pull");
+
+		EntityManagerFactory entityManagerFactory = PersistenceManager
+				.getInstance().createEntityManagerFactory();
+		EntityManager entityManager = entityManagerFactory
+				.createEntityManager();
+
+		if (createAccount(entityManager) == true) {
+
+			MailHelper.syncAllFolders(account, entityManager);
+
+			System.out.println("Account: " + account);
+		}
+
+		entityManager.close();
+	}
+
+	public List<Folder> getFolders() throws MessagingException {
+
+		EntityManager entityManager = connectDatabase();
+		
+		if (createAccount(entityManager) == true) {
+
+			MailHelper.syncAllFolders(account, entityManager);
+
+			System.out.println("Account: " + account);
+		}
+
+		Query query = entityManager.createQuery("SELECT x FROM Folder x ");
+		@SuppressWarnings("unchecked")
+		List<Folder> folders = query.getResultList();
+		
+		entityManager.close();
+		return folders;
+	}
+
+	public boolean createAccount(EntityManager entityManager) {
+
+		account = MailHelper.getAccount(entityManager, "googlemail");
+		if (account == null) {
+			account = new Account();
+			account.setName("googlemail");
+			account.setHost("imap.gmail.com");
+			account.setUsername("siokdub@googlemail.com");
+			account.setPassword("myimmortal1");
+
+			entityManager.getTransaction().begin();
+			entityManager.persist(account);
+			entityManager.getTransaction().commit();
+
+			System.out.println("Created new account");
+			return true;
+
+		} else {
+			System.out.println("Use existing account");
+			return false;
+		}
+	}
+	
+	public EntityManager connectDatabase() {
+		
+		EntityManagerFactory entityManagerFactory = PersistenceManager
+				.getInstance().createEntityManagerFactory();
+		EntityManager entityManager = entityManagerFactory
+				.createEntityManager();
+		
+		return entityManager;
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package de.bht.fpa.mail.s769161.messagetable.factory;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.fsmodel.DirectoryItem;
+
+public abstract class AbstractMessageFactory {
+
+  protected List<Message> messages = new ArrayList<Message>();
+
+  public AbstractMessageFactory(DirectoryItem directoryItem) {
+    this.produceXMLMessages(directoryItem);
+  }
+
+  public List<Message> getMessages() {
+    return messages;
+  }
+
+  protected abstract void produceXMLMessages(DirectoryItem directoryItem);
+}

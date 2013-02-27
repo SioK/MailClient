@@ -1,0 +1,35 @@
+import java.io.File;
+
+
+public class DirectoryItem implements ITreeParent{
+
+	@Override
+	public File getFile() {
+		return this.getFile();
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ITreeObject getParent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean hasChildren() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ITreeObject getChildren() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="askclear" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="default" value="false"/>
+<stringAttribute key="location" value="${workspace_loc}/../runtime-de.bht.fpa.mail.s769161.product"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms40m -Xmx384m"/>
+<booleanAttribute key="pde.generated.config" value="true"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value="de.bht.fpa.mail.s769161.product"/>
+<stringAttribute key="selected_target_plugins" value="com.ibm.icu*4.4.2.v20110208,javax.servlet*2.5.0.v201103041518,org.apache.commons.codec*1.3.0.v201101211617,org.eclipse.core.commands*3.6.0.I20110111-0800,org.eclipse.core.contenttype*3.4.100.v20110423-0524,org.eclipse.core.databinding*1.4.0.I20110111-0800,org.eclipse.core.databinding.observable*1.4.0.I20110222-0800,org.eclipse.core.databinding.property*1.4.0.I20110222-0800,org.eclipse.core.expressions*3.4.300.v20110228,org.eclipse.core.jobs*3.5.100.v20110404,org.eclipse.core.runtime*3.7.0.v20110110,org.eclipse.core.runtime.compatibility.auth*3.2.200.v20110110,org.eclipse.core.runtime.compatibility.registry*3.5.0.v20110505,org.eclipse.equinox.app*1.3.100.v20110321,org.eclipse.equinox.common*3.6.0.v20110523,org.eclipse.equinox.preferences*3.4.0.v20110502,org.eclipse.equinox.registry*3.5.100.v20110502,org.eclipse.help*3.5.100.v20110426,org.eclipse.jface*3.7.0.I20110522-1430,org.eclipse.jface.databinding*1.5.0.I20100907-0800,org.eclipse.osgi*3.7.0.v20110613,org.eclipse.osgi.services*3.3.0.v20110513,org.eclipse.swt*3.7.0.v3735b,org.eclipse.swt.gtk.linux.x86_64*3.7.0.v3735b,org.eclipse.ui*3.7.0.I20110602-0100,org.eclipse.ui.workbench*3.7.0.I20110519-0100"/>
+<stringAttribute key="selected_workspace_plugins" value="de.bht.fpa.mail.common*1.0.0,de.bht.fpa.mail.s769161*1.0.0.qualifier,de.bht.fpa.mail.s769161.filter*1.0.0.qualifier,de.bht.fpa.mail.s769161.fsnavigation*1.0.0.qualifier,de.bht.fpa.mail.s769161.imapnavigation*1.0.0.qualifier,de.bht.fpa.mail.s769161.interpreter*1.0.0.qualifier,de.bht.fpa.mail.s769161.message*1.0.0.qualifier,de.bht.fpa.mail.s769161.messagetable*1.0.0.qualifier,de.bht.fpa.mail.s769161.model*1.0.0.qualifier,de.bht.fpa.mail.s769161.statuslog*1.0.0.qualifier"/>
+<booleanAttribute key="useProduct" value="true"/>
+<booleanAttribute key="usefeatures" value="false"/>
+</launchConfiguration>

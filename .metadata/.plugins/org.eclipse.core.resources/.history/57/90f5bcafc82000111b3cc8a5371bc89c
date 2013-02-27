@@ -1,0 +1,51 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class DirectoryItem implements ITreeParent {
+
+	public File directory;
+	List<ITreeObject> children;
+
+	public DirectoryItem(File directory) {
+		this.directory = directory;
+	}
+
+	@Override
+	public File getFile() {
+		return directory;
+	}
+
+	@Override
+	public String getName() {
+		return directory.getName();
+	}
+
+	@Override
+	public ITreeObject getParent() {
+		return null;
+	}
+
+	@Override
+	public boolean hasChildren() {
+
+		if (getChildren().size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<ITreeObject> getChildren() {
+
+		children = new ArrayList<ITreeObject>();
+		for (File subFile : directory.listFiles()) {
+			if (subFile.isDirectory() & !subFile.isHidden()) {
+				children.add(new DirectoryItem(subFile));
+			}
+		}
+		return children;
+	}
+
+}

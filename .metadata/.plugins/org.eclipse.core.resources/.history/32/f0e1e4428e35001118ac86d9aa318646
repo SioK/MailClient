@@ -1,0 +1,91 @@
+package de.bht.fpa.mail.s769161.imapnavigation.view;
+
+import java.util.Observable;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.part.ViewPart;
+
+import de.bht.fpa.mail.common.MailHelper;
+import de.bht.fpa.mail.common.PersistenceManager;
+import de.bht.fpa.mail.common.SelectionHelper;
+import de.bht.fpa.mail.common.StatusBarHelper;
+
+import de.bht.fpa.mail.common.model.Account;
+import de.bht.fpa.mail.s769161.imapnavigation.IMAPNavigationViewContentProvider;
+import de.bht.fpa.mail.s769161.imapnavigation.IMAPNavigationViewLabelProvider;
+import de.bht.fpa.mail.s769161.imapnavigation.constants.IIMAPNavigationConstants;
+import de.bht.fpa.mail.s769161.imapnavigation.handler.IMAPHandler;
+import de.bht.fpa.mail.s769161.imapnavigation.model.AccountNode;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapAccount;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapFolder;
+
+public class ImapNavigationView extends ViewPart implements
+		IIMAPNavigationConstants {
+
+	public static final String ID = IMAP_NAVIGATION_VIEW_ID;
+	private TreeViewer viewer;
+	
+
+	/**
+	 * This is a callback that will allow us to create the viewer and initialize
+	 * it.
+	 */
+	@Override
+	public void createPartControl(Composite parent) {
+
+		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL
+				| SWT.BORDER);
+		viewer.setContentProvider(new IMAPNavigationViewContentProvider());
+		viewer.setLabelProvider(new IMAPNavigationViewLabelProvider());
+
+
+		AccountNode accountNode = new AccountNode("root");
+		//accountNode.addAccount(new ImapAccount(getAccount()));
+		// accountNode.addAccount(new ImapAccount(createAccount("gmx")));
+
+		viewer.setInput(accountNode);
+
+		getSite().setSelectionProvider(viewer);
+
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				ImapFolder selFolder = SelectionHelper
+						.handleStructuredSelectionEvent(event, ImapFolder.class);
+				String statusMsg = selFolder.getName();
+				StatusBarHelper.getStatusLineManager().setMessage(statusMsg);
+			}
+
+		});
+	}
+
+	private Account getAccount() {
+		EntityManagerFactory entityManagerFactory = PersistenceManager
+				.getInstance().createEntityManagerFactory();
+		EntityManager entityManager = entityManagerFactory
+				.createEntityManager();
+		Account account = MailHelper.getAccount(entityManager, "googlemail");
+
+		return account;
+	}
+
+	/**
+	 * Passing the focus request to the viewer's control.
+	 */
+	@Override
+	public void setFocus() {
+		viewer.getControl().setFocus();
+	}
+
+	public void update(Observable o, Object arg) {
+
+	}
+}

@@ -1,0 +1,37 @@
+package de.bht.fpa.mail.s769161.messagetable.factory;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.fsnavigation.model.DirectoryItem;
+import de.bht.fpa.mail.s769161.fsnavigation.model.FileItem;
+
+public class MessageFactory extends AbstractMessageFactory {
+
+  public MessageFactory(DirectoryItem directoryItem) {
+    super(directoryItem);
+  }
+
+  @Override
+  protected void produceXMLMessages(DirectoryItem directoryItem) {
+    JAXBContext context;
+    for (FileItem subFile : directoryItem.getFiles()) {
+      if (subFile.getName().endsWith(".xml")) {
+        Message message;
+        try {
+          context = JAXBContext.newInstance(Message.class);
+          Unmarshaller u = context.createUnmarshaller();
+          message = (Message) u.unmarshal(subFile.getFile());
+          messages.add(message);
+        } catch (JAXBException e) {
+          System.out.println("invalid xml format");
+        }
+      }
+    }
+  }
+
+}

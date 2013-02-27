@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;de.bht.fpa.mail.s769161.fsnavigation.manager.ClientManager&apos; to &apos;FileSystemManager&apos;&#x0D;&#x0A;- Original project: &apos;de.bht.fpa.mail.s769161.fsnavigation&apos;&#x0D;&#x0A;- Original element: &apos;de.bht.fpa.mail.s769161.fsnavigation.manager.ClientManager&apos;&#x0D;&#x0A;- Renamed element: &apos;de.bht.fpa.mail.s769161.fsnavigation.manager.FileSystemManager&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ClientManager&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;de.bht.fpa.mail.s769161.fsnavigation.manager{ClientManager.java[ClientManager" matchStrategy="1" name="FileSystemManager" qualified="false" references="true" similarDeclarations="false" stamp="1325545633346" textual="false" version="1.0"/>
+</session>

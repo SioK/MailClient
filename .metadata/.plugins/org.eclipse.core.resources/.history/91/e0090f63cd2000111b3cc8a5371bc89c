@@ -1,0 +1,18 @@
+package interfaces;
+
+
+import java.io.File;
+
+
+public abstract class AbstractTreeObject implements ITreeObject{
+	
+	private File file;
+	private ITreeParent parentDirectory;
+
+	public AbstractTreeObject(ITreeParent parentDirectory, File file) {
+
+		this.parentDirectory = parentDirectory;
+		this.file = file;
+
+	}
+}

@@ -1,0 +1,10 @@
+package de.bht.fpa.mail.s769161.interfaces;
+
+
+
+public interface IMessageList {
+	
+	public List<Message> getMessages();
+
+
+}

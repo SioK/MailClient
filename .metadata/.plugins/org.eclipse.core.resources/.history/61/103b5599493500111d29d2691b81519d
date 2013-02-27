@@ -1,0 +1,58 @@
+package de.bht.fpa.mail.manager;
+
+import java.util.Observable;
+import java.util.Observer;
+
+import de.bht.fpa.mail.s769161.imapnavigation.model.AccountNode;
+
+public final class ClientManager {
+
+	private static ClientManager instance = null;
+
+	private String path = System.getProperty("user.home");
+
+	private ClientManager() {
+	}
+
+	public static synchronized ClientManager getInstance() {
+		if (instance == null) {
+			instance = new ClientManager();
+		}
+
+		return instance;
+	}
+
+	static class MyObservable extends Observable {
+		@Override
+		public synchronized void setChanged() {
+			super.setChanged();
+		}
+	}
+
+	private MyObservable baseDirObservable = new MyObservable();
+	
+
+	public void removeBaseDirObserver(Observer observer) {
+		baseDirObservable.addObserver(observer);
+
+	}
+
+	public void addBaseDirObserver(Observer observer) {
+		baseDirObservable.addObserver(observer);
+	}
+
+	public String getBaseDirectoryPath() {
+		return this.path;
+	}
+
+	public void setBaseDirectoryPath(String path) {
+
+		if (path != null) {
+			this.path = path;
+			baseDirObservable.setChanged();
+			baseDirObservable.notifyObservers(path);
+		}
+
+	}
+
+}

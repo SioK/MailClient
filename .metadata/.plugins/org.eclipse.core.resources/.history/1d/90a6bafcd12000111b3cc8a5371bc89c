@@ -1,0 +1,6 @@
+package de.bht.fpa.mail.s769161.model;
+
+public class AbstractMessageListBuilder {
+
+	public BuildMessageList(ITreeParent)
+}

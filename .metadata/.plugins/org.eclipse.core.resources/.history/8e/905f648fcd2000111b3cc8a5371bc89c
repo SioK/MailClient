@@ -1,0 +1,34 @@
+package de.bht.fpa.mail.s769161.model.fsmodel;
+import interfaces.ITreeObject;
+import interfaces.ITreeParent;
+
+import java.io.File;
+
+public class FileItem implements ITreeObject {
+
+	private File file;
+	private ITreeParent parentDirectory;
+
+	public FileItem(ITreeParent parentDirectory, File file) {
+
+		this.parentDirectory = parentDirectory;
+		this.file = file;
+
+	}
+
+	@Override
+	public File getFile() {
+		return file;
+	}
+
+	@Override
+	public String getName() {
+		return file.getName();
+	}
+
+	@Override
+	public ITreeParent getParent() {
+		return parentDirectory;
+	}
+
+}

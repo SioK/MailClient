@@ -1,0 +1,72 @@
+package de.bht.fpa.mail.s769161.model.fsmodel;
+
+import interfaces.ITreeObject;
+import interfaces.ITreeParent;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DirectoryItem implements ITreeParent {
+
+	private File directory;
+	private ITreeParent parentDirectory;
+
+	List<ITreeObject> children;
+	List<ITreeObject> subFiles;
+
+	public DirectoryItem(File directory) {
+		this.directory = directory;
+	}
+
+	public DirectoryItem(ITreeParent parentDirectory, File directory) {
+		this.parentDirectory = parentDirectory;
+		this.directory = directory;
+	}
+
+	@Override
+	public File getFile() {
+		return directory;
+	}
+
+	@Override
+	public String getName() {
+		return directory.getName();
+	}
+
+	@Override
+	public ITreeParent getParent() {
+		return parentDirectory;
+	}
+
+	@Override
+	public boolean hasChildren() {
+
+		if (getChildren().size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<ITreeObject> getChildren() {
+
+		children = new ArrayList<ITreeObject>();
+		for (File subFile : directory.listFiles()) {
+			if (subFile.isDirectory() & !subFile.isHidden()) {
+				children.add(new DirectoryItem(subFile));
+			}
+		}
+		return children;
+	}
+
+	public String getPath() {
+		return directory.getAbsolutePath();
+	}
+
+	public List<FileItem> getFiles() {
+
+		return null;
+	}
+
+}

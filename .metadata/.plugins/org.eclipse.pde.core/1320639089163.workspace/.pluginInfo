@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="415" class="de.bht.fpa.mail.s769161.filter.Activator" localization="OSGI-INF/l10n/bundle" name="Filter" project="de.bht.fpa.mail.s769161.filter"/>
+	<bundle bundleID="417" class="de.bht.fpa.mail.common.internal.Activator" localization="OSGI-INF/l10n/bundle" name="Common" project="de.bht.fpa.mail.common">
+		<library name="."/>
+		<library name="libs/derby.jar"/>
+		<library name="libs/eclipselink.jar"/>
+		<library name="libs/com.springsource.javax.mail-1.4.1.jar"/>
+		<library name="libs/com.springsource.org.apache.commons.codec-1.4.0.jar"/>
+		<library name="libs/javax.persistence_2.0.3.v201010191057.jar"/>
+	</bundle>
+	<bundle bundleID="416" class="de.bht.fpa.mail.s769161.interpreter.Activator" localization="OSGI-INF/l10n/bundle" name="Interpreter" project="de.bht.fpa.mail.s769161.interpreter"/>
+	<bundle bundleID="418" class="de.bht.fpa.mail.s769161.model.Activator" localization="OSGI-INF/l10n/bundle" name="Model" project="de.bht.fpa.mail.s769161.model"/>
+	<bundle bundleID="419" class="de.bht.fpa.mail.s769161.statuslog.Activator" localization="OSGI-INF/l10n/bundle" name="Statuslog" project="de.bht.fpa.mail.s769161.statuslog"/>
+	<bundle bundleID="421" class="de.bht.fpa.mail.s769161.fsnavigation.Activator" localization="OSGI-INF/l10n/bundle" name="Navigation" project="de.bht.fpa.mail.s769161.fsnavigation"/>
+	<bundle bundleID="420" class="de.bht.fpa.mail.s769161.message.Activator" localization="OSGI-INF/l10n/bundle" name="Message" project="de.bht.fpa.mail.s769161.message"/>
+	<bundle bundleID="422" class="de.bht.fpa.mail.s769161.imapnavigation.Activator" localization="OSGI-INF/l10n/bundle" name="Imapnavigation" project="de.bht.fpa.mail.s769161.imapnavigation"/>
+	<bundle bundleID="424" class="de.bht.fpa.mail.s769161.Activator" localization="OSGI-INF/l10n/bundle" name="S769161" project="de.bht.fpa.mail.s769161"/>
+	<bundle bundleID="423" class="de.bht.fpa.mail.s769161.messagetable.Activator" localization="OSGI-INF/l10n/bundle" name="MessageList" project="de.bht.fpa.mail.s769161.messagetable"/>
+</map>

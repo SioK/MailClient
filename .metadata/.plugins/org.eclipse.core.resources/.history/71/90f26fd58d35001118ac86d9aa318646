@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Navigation
+Bundle-SymbolicName: de.bht.fpa.mail.s769161.fsnavigation
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.bht.fpa.mail.s769161.fsnavigation.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.bht.fpa.mail.common;bundle-version="1.0.0",
+ de.bht.fpa.mail.s769161.manager;bundle-version="1.0.0",
+ de.bht.fpa.mail.s769161.model;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.bht.fpa.mail.s769161.fsnavigation.factory,
+ de.bht.fpa.mail.s769161.fsnavigation.model,
+ de.bht.fpa.mail.s769161.fsnavigation.view

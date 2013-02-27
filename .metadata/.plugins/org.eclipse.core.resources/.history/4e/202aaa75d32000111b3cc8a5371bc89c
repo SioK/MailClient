@@ -1,0 +1,7 @@
+package de.bht.fpa.mail.s769161.fsnavigation.builder;
+
+import de.bht.fpa.mail.s769161.model.AbstractMessageListBuilder;
+
+public class MessageListBuilder extends AbstractMessageListBuilder {
+
+}

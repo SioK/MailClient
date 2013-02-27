@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Interpreter
+Bundle-SymbolicName: de.bht.fpa.mail.s769161.interpreter
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.bht.fpa.mail.s769161.interpreter.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.bht.fpa.mail.s769161.filter;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.bht.fpa.mail.s769161.interpreter

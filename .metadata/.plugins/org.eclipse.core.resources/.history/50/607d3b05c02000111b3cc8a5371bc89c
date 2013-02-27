@@ -1,0 +1,80 @@
+package de.bht.fpa.mail.s769161.fsnavigation.view;
+
+import java.io.File;
+import java.util.Observable;
+import java.util.Observer;
+
+import org.eclipse.jface.action.IStatusLineManager;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.part.ViewPart;
+
+import de.bht.fpa.mail.common.SelectionHelper;
+import de.bht.fpa.mail.manager.ClientManager;
+import de.bht.fpa.mail.s769161.fsnavigation.NavigationViewContentProvider;
+import de.bht.fpa.mail.s769161.fsnavigation.NavigationViewLabelProvider;
+import de.bht.fpa.mail.s769161.fsnavigation.constants.INavigationConstants;
+import de.bht.fpa.mail.s769161.model.DirectoryItem;
+
+public class NavigationView extends ViewPart implements Observer,
+		INavigationConstants {
+	public static final String ID = NAVIGATION_VIEW_ID;
+	private TreeViewer viewer;
+
+	/**
+	 * This is a callback that will allow us to create the viewer and initialize
+	 * it.
+	 */
+	@Override
+	public void createPartControl(Composite parent) {
+
+		ClientManager.getInstance().addBaseDirObserver(this);
+		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL
+				| SWT.BORDER);
+		viewer.setContentProvider(new NavigationViewContentProvider());
+		viewer.setLabelProvider(new NavigationViewLabelProvider());
+		viewer.setInput(getBaseDirectory());
+
+		getSite().setSelectionProvider(viewer);
+		
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStatusLineManager manager = getViewSite().getActionBars().getStatusLineManager();
+				DirectoryItem selDir = SelectionHelper.handleStructuredSelectionEvent(event, DirectoryItem.class);
+				manager.setMessage(STATUS_LINE_OPENED_DIRECTORY_PREFIX + selDir.getName());
+			}
+
+		});
+		
+
+
+	}
+
+	/**
+	 * Passing the focus request to the viewer's control.
+	 */
+	@Override
+	public void setFocus() {
+		viewer.getControl().setFocus();
+	}
+
+	public DirectoryItem getBaseDirectory() {
+		return new DirectoryItem(new File(ClientManager.getInstance()
+				.getBaseDirectoryPath()));
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		IStatusLineManager manager = getViewSite().getActionBars()
+				.getStatusLineManager();
+		manager.setMessage(STATUS_LINE_ROOT_DIRECTORY_PREFIX
+				+ getBaseDirectory().getPath());
+		viewer.setInput(getBaseDirectory());
+	}
+}

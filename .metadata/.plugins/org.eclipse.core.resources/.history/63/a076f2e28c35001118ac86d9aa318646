@@ -1,0 +1,38 @@
+package de.bht.fpa.mail.s769161.actions;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.jface.action.Action;
+import org.eclipse.ui.IWorkbenchWindow;
+
+import de.bht.fpa.mail.s769161.Activator;
+import de.bht.fpa.mail.s769161.ICommandIds;
+import de.bht.fpa.mail.s769161.imapnavigation.handler.IMAPHandler;
+
+public class SynchronizeImapFolderAction extends Action {
+
+  private IMAPHandler imapHandler;
+
+  public SynchronizeImapFolderAction(IWorkbenchWindow window, String label) {
+
+    setText(label);
+    // The id is used to refer to the action in a menu or toolbar
+    setId(ICommandIds.CMD_OPEN_ROOT_DIRECTORY);
+    // Associate the action with a pre-defined command, to allow key bindings.
+    setActionDefinitionId(ICommandIds.CMD_OPEN_ROOT_DIRECTORY);
+    setImageDescriptor(de.bht.fpa.mail.s769161.Activator.getImageDescriptor("/icons/sample3.gif"));
+  }
+
+  @Override
+  public void run() {
+
+    try {
+      IMAPHandler.synchronizeFolders();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+  }
+}

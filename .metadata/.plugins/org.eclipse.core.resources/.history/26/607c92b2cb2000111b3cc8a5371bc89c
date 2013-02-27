@@ -1,0 +1,32 @@
+import interfaces.ITreeObject;
+import interfaces.ITreeParent;
+
+import java.io.File;
+
+
+public class FileItem implements ITreeObject{
+
+	private File file;
+	
+	public FileItem(File file) {
+		this.file = file;
+	}
+	
+	@Override
+	public File getFile() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getName() {
+		
+	}
+
+	@Override
+	public ITreeParent getParent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

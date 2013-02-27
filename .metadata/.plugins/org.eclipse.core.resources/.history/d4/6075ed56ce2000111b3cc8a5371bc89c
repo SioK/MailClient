@@ -1,0 +1,9 @@
+package interfaces;
+import java.io.File;
+
+
+public interface ITreeObject {
+
+	public File getFile();
+	public String getName();
+}

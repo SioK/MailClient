@@ -1,0 +1,6 @@
+package de.bht.fpa.mail.s769161.statuslog;
+
+interface IStatusBar {
+
+	public void setMessage(String message);
+}

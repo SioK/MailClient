@@ -1,0 +1,23 @@
+package de.bht.fpa.mail.s769161.model;
+
+import java.util.List;
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.interfaces.IMessageList;
+import de.bht.fpa.mail.s769161.interfaces.ITreeParent;
+
+public abstract class AbstractMessageListBuilder {
+	
+	public ITreeParent treeParent;
+	public IMessageList messages;
+
+	public AbstractMessageListBuilder(ITreeParent treeParent) {
+		this.treeParent = treeParent;
+	}
+	
+	public IMessageList getMessages() {
+		return messages;
+	}
+	
+	abstract void produceMessageList();
+}

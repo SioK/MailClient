@@ -1,0 +1,12 @@
+package de.bht.fpa.mail.s769161.fsnavigation.builder;
+
+import de.bht.fpa.mail.s769161.interfaces.ITreeParent;
+import de.bht.fpa.mail.s769161.model.AbstractMessageListBuilder;
+
+public class MessageListBuilder extends AbstractMessageListBuilder {
+
+	public MessageListBuilder(ITreeParent treeParent) {
+		super(treeParent);
+	}
+
+}

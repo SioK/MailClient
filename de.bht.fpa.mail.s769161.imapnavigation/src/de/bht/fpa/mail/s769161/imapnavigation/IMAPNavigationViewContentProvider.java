@@ -1,0 +1,67 @@
+package de.bht.fpa.mail.s769161.imapnavigation;
+
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.Viewer;
+
+import de.bht.fpa.mail.s769161.imapnavigation.model.AccountNode;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapAccount;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapFolder;
+
+public class IMAPNavigationViewContentProvider implements
+		IStructuredContentProvider, ITreeContentProvider {
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Object[] getChildren(Object parentElement) {
+		if (parentElement instanceof ImapAccount) {
+			return ((ImapAccount) parentElement).getChildren().toArray();
+		}
+
+		if (parentElement instanceof AccountNode) {
+			return ((AccountNode) parentElement).getChildren().toArray();
+		}
+
+		return new Object[0];
+	}
+
+	@Override
+	public Object getParent(Object element) {
+		if (element instanceof ImapFolder) {
+			return ((ImapFolder) element).getParent();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean hasChildren(Object element) {
+
+		if (element instanceof ImapAccount) {
+			return ((ImapAccount) element).hasChildren();
+		}
+		
+		if(element instanceof AccountNode) {
+			return ((AccountNode) element).hasChildren();
+		}
+		
+		return false;
+
+	}
+
+	@Override
+	public Object[] getElements(Object inputElement) {
+		return getChildren(inputElement);
+	}
+
+}

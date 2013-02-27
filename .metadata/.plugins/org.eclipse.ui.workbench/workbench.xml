@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="23" version="2.0">
+<workbenchAdvisor/>
+<window height="768" maximized="true" width="1024" x="412" y="96">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="68" y="30"/>
+<coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="96" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.pde.ui.manifestEditor" itemType="typePlaceholder" x="40" y="30"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1325503363589" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MessageTableView.java" partName="MessageTableView.java" path="/home/siok/FPA_ROOT_DUBOIS/de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java" title="MessageTableView.java" tooltip="de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6141" selectionTopPixel="2058"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" partName="View.java" path="/home/siok/FPA_ROOT_DUBOIS/de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java" title="View.java" tooltip="de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4385" selectionTopPixel="2858"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1325503363589">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="de.tobject.findbugs.view.bugtreeview"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="com.android.ide.eclipse.adt.project.NewProjectWizard"/>
+<new_wizard_action id="com.android.ide.eclipse.editors.wizards.NewXmlFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
+<perspective_action id="de.tobject.findbugs.FindBugsPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="right" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6d5c7083">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="left" ratio="0.24959612" ratioLeft="309" ratioRight="929" relationship="2" relative="org.eclipse.ui.internal.ViewStack@6d5c7083">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6b8efd7c" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.2324665" ratioLeft="295" ratioRight="974" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.6827372" ratioLeft="439" ratioRight="204" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Perspective.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Application.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationActionBarAdvisor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchWindowAdvisor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchAdvisor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Activator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ICommandIds.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/IConstants.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.common/src/de/bht/fpa/mail/common/model/Message.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java"/>
+</editors>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4148" y="0"/>
+</item>
+<item historyLabel="Application.java" index="3">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4148" y="0"/>
+</item>
+<item historyLabel="ApplicationActionBarAdvisor.java" index="4">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4148" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchWindowAdvisor.java" index="5">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="Perspective.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="Application.java" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchWindowAdvisor.java" index="5">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchAdvisor.java" index="6">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="Activator.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationActionBarAdvisor.java" index="4">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchWindowAdvisor.java" index="5">
+<position/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ICommandIds.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationActionBarAdvisor.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchAdvisor.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="ApplicationWorkbenchWindowAdvisor.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="IConstants.java" index="9">
+<position info="not_deleted" x="188" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="4127" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4261" y="53"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="6220" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4261" y="53"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="6219" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5735" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="6202" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5739" y="11"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5739" y="11"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5000" y="0"/>
+</item>
+<item historyLabel="Message.java" index="10">
+<position info="not_deleted" x="3393" y="30"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5281" y="0"/>
+</item>
+<item historyLabel="View.java" index="1">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="5281" y="0"/>
+</item>
+<item historyLabel="MessageTableView.java" index="0">
+<position info="not_deleted" x="6202" y="0"/>
+</item>
+<item active="true" historyLabel="View.java" index="11">
+<position info="not_deleted" x="4385" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="right"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Message.java" tooltip="de.bht.fpa.mail.common/src/de/bht/fpa/mail/common/model/Message.java">
+<persistable path="/de.bht.fpa.mail.common/src/de/bht/fpa/mail/common/model/Message.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IConstants.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/IConstants.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/IConstants.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationWorkbenchWindowAdvisor.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchWindowAdvisor.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchWindowAdvisor.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationWorkbenchAdvisor.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchAdvisor.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationWorkbenchAdvisor.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationActionBarAdvisor.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationActionBarAdvisor.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ApplicationActionBarAdvisor.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ICommandIds.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ICommandIds.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/ICommandIds.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Activator.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Activator.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Activator.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Application.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Application.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Perspective.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Perspective.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/Perspective.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="View.java" tooltip="de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java">
+<persistable path="/de.bht.fpa.mail.s769161.message/src/de/bht/fpa/mail/s769161/message/view/View.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.pde.ui.manifestEditor" name="plugin.xml" tooltip="de.bht.fpa.mail.s769161/plugin.xml">
+<persistable path="/de.bht.fpa.mail.s769161/plugin.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractPreferenceInitializer.java" tooltip="de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/preferences/AbstractPreferenceInitializer.java">
+<persistable path="/de.bht.fpa.mail.s769161/src/de/bht/fpa/mail/s769161/preferences/AbstractPreferenceInitializer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MessageTableView.java" tooltip="de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java">
+<persistable path="/de.bht.fpa.mail.s769161.messagetable/src/de/bht/fpa/mail/s769161/messagetable/view/MessageTableView.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AbstractMessageListFactory.java" tooltip="de.bht.fpa.mail.s769161.model/src/de/bht/fpa/mail/s769161/model/AbstractMessageListFactory.java">
+<persistable path="/de.bht.fpa.mail.s769161.model/src/de/bht/fpa/mail/s769161/model/AbstractMessageListFactory.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ITreeParent.java" tooltip="de.bht.fpa.mail.s769161.model/src/de/bht/fpa/mail/s769161/interfaces/ITreeParent.java">
+<persistable path="/de.bht.fpa.mail.s769161.model/src/de/bht/fpa/mail/s769161/interfaces/ITreeParent.java"/>
+</file>
+</mruList>
+</workbench>

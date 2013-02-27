@@ -1,0 +1,24 @@
+package de.bht.fpa.mail.s769161.fsmodel;
+
+import java.io.File;
+
+public class FileItem extends AbstractFileSystemItem {
+
+  protected File file;
+
+  public FileItem(IFileSystemItem parentDirectory, File file) {
+
+    super(parentDirectory);
+    this.file = file;
+
+  }
+
+  @Override
+  public String getName() {
+    return file.getName();
+  }
+
+  public File getFile() {
+    return file;
+  }
+}

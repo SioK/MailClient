@@ -1,0 +1,262 @@
+package de.bht.fpa.mail.s769161.messagetable.view;
+
+import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.part.ViewPart;
+
+import de.bht.fpa.mail.common.SelectionHelper;
+import de.bht.fpa.mail.common.StatusBarHelper;
+import de.bht.fpa.mail.common.model.Message;
+
+import de.bht.fpa.mail.s769161.fsnavigation.factory.XMLMessageListFactory;
+import de.bht.fpa.mail.s769161.fsnavigation.model.DirectoryItem;
+import de.bht.fpa.mail.s769161.interfaces.IMessageList;
+import de.bht.fpa.mail.s769161.messagetable.Activator;
+import de.bht.fpa.mail.s769161.messagetable.MessageFilter;
+import de.bht.fpa.mail.s769161.messagetable.NameSorter;
+import de.bht.fpa.mail.s769161.messagetable.TableViewContentProvider;
+import de.bht.fpa.mail.s769161.messagetable.constants.IMessageTableConstants;
+import de.bht.fpa.mail.s769161.model.MessageList;
+
+public class MessageTableView extends ViewPart implements
+		IMessageTableConstants {
+
+	public static final String ID = MAIL_LIST_VIEW_ID;
+	private TableViewer viewer;
+	private Text searchText;
+	private MessageFilter messageFilter;
+	private NameSorter nameSorter;
+
+	@Override
+	public void createPartControl(Composite parent) {
+
+		createSearchBar(parent);
+
+		createTableViewer(parent);
+
+		searchText.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				messageFilter.setSearch(searchText.getText());
+				viewer.refresh();
+			}
+		});
+
+		getSite().setSelectionProvider(viewer);
+
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				Message selMsg = SelectionHelper
+						.handleStructuredSelectionEvent(event, Message.class);
+				if (selMsg != null) {
+					String statusMsg = STATUS_LINE_OPENED_MESSAGE_PREFIX
+							+ "ID_" + selMsg.getId();
+					StatusBarHelper.getStatusLineManager()
+							.setMessage(statusMsg);
+				}
+			}
+		});
+	}
+
+	public void createSearchBar(Composite parent) {
+		GridLayout layout = new GridLayout(2, false);
+		parent.setLayout(layout);
+
+		GridData columnSize = new GridData();
+		columnSize.heightHint = SEARCHFIELD_HEIGHT;
+		columnSize.widthHint = SEARCHFIELD_WIDTH;
+
+		Label searchLabel = new Label(parent, SWT.NONE);
+		searchLabel.setText("Search: ");
+
+		searchText = new Text(parent, SWT.BORDER);
+		searchText.setLayoutData(columnSize);
+	}
+
+	public void createTableViewer(Composite parent) {
+
+		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL
+				| SWT.V_SCROLL | SWT.BORDER | SWT.FULL_SELECTION);
+		viewer.setContentProvider(new TableViewContentProvider());
+
+		getSite().getWorkbenchWindow().getSelectionService()
+				.addSelectionListener(listener);
+
+		// creates the TableColumns
+		createColumns();
+
+		Table table = viewer.getTable();
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
+
+		nameSorter = new NameSorter();
+		viewer.setComparator(nameSorter);
+
+		messageFilter = new MessageFilter();
+		viewer.addFilter(messageFilter);
+
+		GridData gridData = new GridData();
+		gridData.verticalAlignment = GridData.FILL;
+		gridData.horizontalSpan = 2;
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.grabExcessVerticalSpace = true;
+		gridData.horizontalAlignment = GridData.FILL;
+		viewer.getControl().setLayoutData(gridData);
+
+	}
+
+	public void createColumns() {
+
+		TableViewerColumn importance = createColumn(
+				MAIL_LIST_COLUMN_IMPORTANCE, IMPORTANCE_IMAGE,
+				MAIL_LIST_COLUMN_WIDTH_IMPORTANCE, IMPORTANCE_COLUMN_INDEX);
+		importance.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof Message) {
+					Message msg = (Message) element;
+					return msg.getImportance().toString();
+				}
+				return super.getText(element);
+			}
+		});
+
+		TableViewerColumn read = createColumn(MAIL_LIST_COLUMN_READ,
+				READ_IMAGE, MAIL_LIST_COLUMN_WIDTH_READ, READ_COLUMN_INDEX);
+		read.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof Message) {
+					Message msg = (Message) element;
+					return msg.isRead() + "";
+				}
+				return super.getText(element);
+			}
+		});
+
+		TableViewerColumn from = createColumn(MAIL_LIST_COLUMN_FROM,
+				SENDER_IMAGE, MAIL_LIST_COLUMN_WIDTH_FROM, FROM_COLUMN_INDEX);
+		from.getColumn().addSelectionListener(
+				getSelectionAdapter(from.getColumn(), FROM_COLUMN_INDEX));
+		from.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof Message) {
+					Message msg = (Message) element;
+					return msg.getSender().getEmail();
+				}
+				return super.getText(element);
+			}
+		});
+
+		TableViewerColumn subject = createColumn(MAIL_LIST_COLUMN_SUBJECT,
+				SUBJECT_IMAGE, MAIL_LIST_COLUMN_WIDTH_SUBJECT,
+				SUBJECT_COLUMN_INDEX);
+		subject.getColumn().addSelectionListener(
+				getSelectionAdapter(subject.getColumn(), SUBJECT_COLUMN_INDEX));
+		subject.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof Message) {
+					Message msg = (Message) element;
+					return msg.getSubject();
+				}
+				return super.getText(element);
+			}
+		});
+
+		TableViewerColumn date = createColumn(MAIL_LIST_COLUMN_DATE,
+				DATE_IMAGE, MAIL_LIST_COLUMN_WIDTH_DATE, DATE_COLUMN_INDEX);
+		date.setLabelProvider(new ColumnLabelProvider() {
+			@Override
+			public String getText(Object element) {
+				if (element instanceof Message) {
+					Message msg = (Message) element;
+					return msg.getReceived().toString();
+				}
+				return super.getText(element);
+			}
+		});
+
+	}
+
+	// create a column
+	private TableViewerColumn createColumn(String title, String imagePath,
+			int bound, final int colNumber) {
+		final TableViewerColumn viewerColumn = new TableViewerColumn(viewer,
+				SWT.NONE);
+		final TableColumn column = viewerColumn.getColumn();
+		column.setText(title);
+		column.setImage(Activator.getImageDescriptor(imagePath).createImage());
+		column.setWidth(bound);
+		column.setResizable(true);
+		column.setMoveable(true);
+		column.addSelectionListener(getSelectionAdapter(column, colNumber));
+		return viewerColumn;
+	}
+
+	private SelectionAdapter getSelectionAdapter(final TableColumn column,
+			final int index) {
+		SelectionAdapter selectionAdapter = new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				nameSorter.setColumn(index);
+				int direction = nameSorter.getDirection();
+				viewer.getTable().setSortDirection(direction);
+				viewer.getTable().setSortColumn(column);
+				viewer.refresh();
+			}
+		};
+		return selectionAdapter;
+	}
+
+	@Override
+	public void setFocus() {
+		viewer.getControl().setFocus();
+
+	}
+
+	ISelectionListener listener = new ISelectionListener() {
+		@Override
+		public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+			DirectoryItem selDir = SelectionHelper.handleStructuredSelection(
+					selection, DirectoryItem.class);
+			if (selDir != null) {
+				System.out.println("test");
+				XMLMessageListFactory factory = new XMLMessageListFactory(selDir);
+				factory.produceMessageList();
+				MessageList messageList= factory.getMessages();
+				viewer.setInput(messageList);
+			}
+		}
+	};
+
+	public void dispose() {
+		super.dispose();
+		getSite().getPage().removeSelectionListener(listener);
+	}
+}

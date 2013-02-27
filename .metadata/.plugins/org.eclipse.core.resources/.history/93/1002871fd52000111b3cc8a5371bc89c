@@ -1,0 +1,8 @@
+package de.bht.fpa.mail.s769161.interfaces;
+
+
+
+public class IMessageList {
+
+
+}

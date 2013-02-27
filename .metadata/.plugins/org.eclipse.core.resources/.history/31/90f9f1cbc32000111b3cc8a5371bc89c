@@ -1,0 +1,17 @@
+package de.bht.fpa.mail.s769161.fsmodel;
+
+public abstract class AbstractFileSystemItem implements IFileSystemItem {
+
+  protected IFileSystemItem parentDirectory;
+
+  public AbstractFileSystemItem(IFileSystemItem parentDirectory) {
+
+    this.parentDirectory = parentDirectory;
+  }
+
+  @Override
+  public IFileSystemItem getParentDirectory() {
+
+    return this.parentDirectory;
+  }
+}

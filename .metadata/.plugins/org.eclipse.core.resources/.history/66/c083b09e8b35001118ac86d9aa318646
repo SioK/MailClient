@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.bht.fpa.mail.s769161.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.bht.fpa.mail.s769161.Perspective"
+            id="de.bht.fpa.mail.s769161.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Message"
+            allowMultiple="false"
+            icon="icons/sample2.gif"
+            class="de.bht.fpa.mail.s769161.message.view.View"
+            id="de.bht.fpa.mail.s769161.message">
+      </view>
+      <view
+            name="Mailboxes"
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="de.bht.fpa.mail.s769161.fsnavigation.view.NavigationView"
+            id="de.bht.fpa.mail.s769161.navigationView">
+      </view>
+      <view
+            class="de.bht.fpa.mail.s769161.messagetable.view.MessageTableView"
+            id="de.bht.fpa.mail.s769161.messagetable.view"
+            name="MessageTableView"
+            restorable="true">
+      </view>
+      <view
+            class="de.bht.fpa.mail.s769161.imapnavigation.view.ImapNavigationView"
+            id="de.bht.fpa.mail.s769161.imapNavigationView"
+            name="IMAPNavigationView"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="de.bht.fpa.mail.s769161.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="de.bht.fpa.mail.s769161.category"
+            id="de.bht.fpa.mail.s769161.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="de.bht.fpa.mail.s769161.category"
+            id="de.bht.fpa.mail.s769161.openMessage">
+      </command>
+      <command
+            id="de.bht.fpa.mail.s769161.setBaseDirectory"
+            name="setBaseDirectory">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.bht.fpa.mail.s769161.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+2">
+      </key>
+      <key
+            commandId="de.bht.fpa.mail.s769161.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+4">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.bht.fpa.mail.s769161.application"
+            name="FPA Mailer">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.bht.fpa.mail.s769161.preferences.IMAPSettings"
+            id="de.bht.fpa.mail.s769161.IMAPSettings"
+            name="IMAP Settings">
+      </page>
+   </extension>
+
+</plugin>

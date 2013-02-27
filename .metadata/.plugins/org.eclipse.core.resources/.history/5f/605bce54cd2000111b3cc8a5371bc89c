@@ -1,0 +1,9 @@
+package interfaces;
+
+
+import de.bht.fpa.mail.s769161.model.fsmodel.IFileSystemItem;
+
+public abstract class AbstractTreeObject implements ITreeObject{
+
+
+}

@@ -1,0 +1,7 @@
+package de.bht.fpa.mail.s769161.model;
+
+import de.bht.fpa.mail.s769161.interfaces.IMessageList;
+
+public class MessageList implements IMessageList{
+
+}

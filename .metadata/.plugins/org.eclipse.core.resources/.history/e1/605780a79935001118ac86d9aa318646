@@ -1,0 +1,59 @@
+package de.bht.fpa.mail.s769161.imapnavigation.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import de.bht.fpa.mail.s769161.interfaces.ITreeObject;
+import de.bht.fpa.mail.s769161.interfaces.ITreeParent;
+
+public class AccountNode implements ITreeObject, ITreeParent{
+	
+	String name;
+	ITreeParent imapParentItem;
+	List<ITreeObject> accounts = new ArrayList<ITreeObject>();
+	
+	public AccountNode(String name) {
+		this.name = name;
+	}
+	
+	AccountNode(ITreeParent imapParentItem, String name) {
+		this.imapParentItem = imapParentItem;
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void addAccount(ImapAccount account) {
+		accounts.add((ITreeObject)account);
+	}
+	
+	public List<ITreeObject> getAccounts() {
+		return accounts;
+	}
+
+	@Override
+	public Object getObject() {
+		return name;
+	}
+
+	@Override
+	public ITreeParent getParent() {
+		return imapParentItem;
+	}
+
+	@Override
+	public boolean hasChildren() {
+		if (getChildren().size() > 0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<ITreeObject> getChildren() {
+		return accounts;
+	}
+
+}

@@ -1,0 +1,31 @@
+1323256022531	Rename package 'de.bht.fpa.mail.s769161.model'
+1323256111104	Rename package 'de.bht.fpa.mail.s769161.fsmodel'
+1323256121518	Rename package 'de.bht.fpa.mail.s769161.imapmodel'
+1323256188157	Rename package 'de.bht.fpa.mail.s769161.imodel.mapmodel'
+1323256222575	Rename package 'de.bht.fpa.mail.s769161.model.mapmodel'
+1323256232915	Move compilation unit
+1323256449889	Rename type 'IAbstractTreeObject'
+1323256471182	Rename type 'IAbstractTreeParent'
+1323257184030	Rename method 'hasChilds'
+1323257193038	Rename method 'getChilds'
+1323258396522	Rename type 'DirectoryItem'
+1323258400865	Move compilation unit
+1323258518792	Move compilation units
+1323258704061	Rename type 'DirectoryItem'
+1323258715902	Rename type 'DirectoryItem1'
+1323258728368	Delete element
+1323258738341	Rename type 'DirectoryItem2'
+1323259569696	Delete element
+1323259574187	Move compilation unit
+1323260681132	Delete element
+1323260756787	Delete element
+1323260760905	Delete element
+1323260795709	Move compilation units
+1323260876152	Delete element
+1323260883322	Delete element
+1323260917104	Rename package 'interfaces'
+1323263089143	Rename type 'IMessages'
+1323266013228	Rename type 'AbstractMessageListBuilder'
+1323266290465	Move compilation unit
+1323267505474	Rename method 'getMessages'
+1323271794564	Delete element

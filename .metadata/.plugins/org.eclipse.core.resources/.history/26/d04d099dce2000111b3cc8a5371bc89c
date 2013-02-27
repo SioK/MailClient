@@ -1,0 +1,8 @@
+package de.bht.fpa.mail.s769161.model.fsmodel;
+
+public interface IFileSystemItem {
+
+  IFileSystemItem getParentDirectory();
+
+  String getName();
+}

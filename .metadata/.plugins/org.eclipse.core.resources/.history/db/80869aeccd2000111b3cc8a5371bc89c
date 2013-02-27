@@ -1,0 +1,24 @@
+package de.bht.fpa.mail.s769161.model.fsmodel;
+import interfaces.ITreeObject;
+import interfaces.ITreeParent;
+
+import java.io.File;
+
+public class FileItem extends AbstractTreeObject {
+
+	private File file;
+
+	
+
+	@Override
+	public File getFile() {
+		return file;
+	}
+
+	@Override
+	public String getName() {
+		return file.getName();
+	}
+
+
+}

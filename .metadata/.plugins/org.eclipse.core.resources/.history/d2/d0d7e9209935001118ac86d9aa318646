@@ -1,0 +1,98 @@
+package de.bht.fpa.mail.s769161;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.ui.application.ActionBarAdvisor;
+import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
+import org.eclipse.ui.application.WorkbenchWindowAdvisor;
+
+import de.bht.fpa.mail.common.model.Account;
+import de.bht.fpa.mail.s769161.fsnavigation.manager.FileSystemManager;
+import de.bht.fpa.mail.s769161.imapnavigation.handler.IMAPHandler;
+import de.bht.fpa.mail.s769161.imapnavigation.manager.ImapManager;
+import de.bht.fpa.mail.s769161.imapnavigation.model.AccountNode;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapAccount;
+import de.bht.fpa.mail.s769161.preferences.FileSystemSettings;
+import de.bht.fpa.mail.s769161.preferences.IMAPSettings;
+
+public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor implements IConstants {
+
+  public ApplicationWorkbenchWindowAdvisor(IWorkbenchWindowConfigurer configurer) {
+    super(configurer);
+  }
+
+  @Override
+  public ActionBarAdvisor createActionBarAdvisor(IActionBarConfigurer configurer) {
+    return new ApplicationActionBarAdvisor(configurer);
+  }
+
+  @Override
+  public void preWindowOpen() {
+    IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
+    configurer.setInitialSize(new Point(WINDOW_WIDTH, WINDOW_HEIGHT));
+    configurer.setTitle("Mail Client");
+    configurer.setShowCoolBar(true);
+    configurer.setShowStatusLine(true);
+
+    // initial preferences
+
+    IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+
+    // set BaseDirectory
+    String rootPath = preferenceStore.getString(FileSystemSettings.BASEDIRECTORY);
+    FileSystemManager basePath = FileSystemManager.getInstance();
+    if (rootPath != "" && rootPath != null) {
+      basePath.setBaseDirectoryPath(rootPath);
+    }
+
+    // set Account settings
+
+    String accountname = preferenceStore.getString(IMAPSettings.ACCOUNT_ID);
+    String host = preferenceStore.getString(IMAPSettings.HOST);
+    String username = preferenceStore.getString(IMAPSettings.USERNAME);
+    String password = preferenceStore.getString(IMAPSettings.PASSWORD);
+
+    AccountNode accountNode = new AccountNode("root");
+
+    EntityManager entityManager = IMAPHandler.getEntityManager();
+    Account account = IMAPHandler.createAccount(entityManager, accountname, host, username, password);
+    List<Account> accountTypeList = new ArrayList<Account>();
+    accountTypeList.add(account);
+
+    for (final Account accountType : accountTypeList) {
+      if (accountType != null) {
+        Job syncJob = new Job("synchronizeFolders") {
+
+          @Override
+          protected IStatus run(IProgressMonitor monitor) {
+            // IMAPHandler.synchronizeFolders(accountType);
+            return Status.OK_STATUS;
+          }
+        };
+
+        syncJob.schedule();
+        if (syncJob.getResult() == Status.OK_STATUS) {
+          syncJob.cancel();
+        }
+        accountNode.addAccount(new ImapAccount(accountType));
+      }
+    }
+    
+    ImapManager manager = ImapManager.getInstance();
+    if (manager != null) {
+      manager.setAccountNode(accountNode);
+    }
+
+  }
+
+}

@@ -1,0 +1,7 @@
+package de.bht.fpa.mail.s769161.statuslog;
+
+
+public class StatusBar implements IStatusBar {
+
+
+}

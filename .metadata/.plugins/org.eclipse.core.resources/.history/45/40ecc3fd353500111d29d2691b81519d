@@ -1,0 +1,40 @@
+package de.bht.fpa.mail.s769161;
+
+
+
+import org.eclipse.ui.IFolderLayout;
+import org.eclipse.ui.IPageLayout;
+import org.eclipse.ui.IPerspectiveFactory;
+
+import de.bht.fpa.mail.s769161.fsnavigation.view.NavigationView;
+import de.bht.fpa.mail.s769161.imapnavigation.view.ImapNavigationView;
+import de.bht.fpa.mail.s769161.message.view.View;
+import de.bht.fpa.mail.s769161.messagetable.view.MessageTableView;
+
+public class Perspective implements IPerspectiveFactory, IConstants {
+
+  /**
+   * The ID of the perspective as specified in the extension.
+   */
+  public static final String ID = "de.bht.fpa.mail.s769161.perspective";
+
+  @Override
+  public void createInitialLayout(IPageLayout layout) {
+    String editorArea = layout.getEditorArea();
+    layout.setEditorAreaVisible(false);
+    
+    IFolderLayout navigation = layout.createFolder("navigation", IPageLayout.LEFT, NAVIGATION_VIEW_RATIO, editorArea);
+    navigation.addView(MessageTableView.ID);
+    navigation.addView(ImapNavigationView.ID);
+
+    //layout.addStandaloneView(NavigationView.ID, false, IPageLayout.LEFT, NAVIGATION_VIEW_RATIO, editorArea);
+    //layout.addStandaloneView(ImapNavigationView.ID, false, IPageLayout.LEFT, NAVIGATION_VIEW_RATIO, editorArea);
+    
+    layout.addStandaloneView(MessageTableView.ID, false, IPageLayout.TOP, MAIL_LIST_VIEW_RATIO, editorArea);
+
+    layout.addStandaloneView(View.ID, false, IPageLayout.BOTTOM, VIEW_RATIO, editorArea);
+
+    //layout.getViewLayout(NavigationView.ID).setCloseable(false);
+    layout.getViewLayout(ImapNavigationView.ID).setCloseable(false);
+  }
+}

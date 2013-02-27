@@ -1,0 +1,33 @@
+<message>
+<id>1</id>
+<sender>
+<email>udo@ural-mountain.org</email>
+<firstName>Udo</firstName>
+<name>Ural</name>
+</sender>
+<recipient>
+<email>manfred@mustermann.de</email>
+<firstName>Manfred</firstName>
+<name>Mustermann</name>
+</recipient>
+<received>2011-11-23 08:30:00</received>
+<subject>New Daisy/Cocoon portal powered website</subject>
+<attachment>
+<fileName>test.txt</fileName>
+<!-- Base64 encodierte Datei -->
+<body>
+SW4gZGllc2VyIE1haWwgaXN0IG51ciBlaW4gbGFuZ3dlaWxpZ2VyIFRleHQgZHJpbi4gRXMg
+c2llaHQgaW4gQmFzZTY0IHZpZWwgY29vbGVyIGF1cy4NCg0KRmluZGUgaWNoIGplZGVuZmFsbHMuLi4=
+</body>
+</attachment>
+<importance>high</importance>
+<read>true</read>
+<text>
+Hello,
+since a few days we are online with http://www.intergator.de which is based
+...
+---------------------------------------------------------------------
+To unsubscribe, e-mail: users-unsubscribe@cocoon.apache.org
+For additional commands, e-mail: users-help@cocoon.apache.org
+</text>
+</message>

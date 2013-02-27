@@ -1,0 +1,6 @@
+
+public interface ITreeParent extends ITreeObject{
+
+	public boolean hasChilds();
+	
+}

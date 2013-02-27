@@ -1,0 +1,28 @@
+package de.bht.fpa.mail.s769161.model;
+
+import java.util.List;
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.interfaces.IMessageList;
+
+public class MessageList implements IMessageList{
+
+	@Override
+	public List<Message> getMessages() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addMessage(Message message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeMessage(Message message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

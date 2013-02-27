@@ -1,0 +1,30 @@
+package de.bht.fpa.mail.s769161.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.interfaces.IMessageList;
+
+public class MessageList implements IMessageList{
+
+	private List<Message> messages;
+	
+	@Override
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	@Override
+	public void addMessage(Message message) {
+		messages.add(message);
+		
+	}
+
+	@Override
+	public void removeMessage(int index) {
+		messages.remove(index);
+		
+	}
+
+}

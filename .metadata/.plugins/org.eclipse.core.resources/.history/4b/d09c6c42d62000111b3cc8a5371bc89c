@@ -1,0 +1,39 @@
+package de.bht.fpa.mail.s769161.fsnavigation.builder;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import de.bht.fpa.mail.common.model.Message;
+import de.bht.fpa.mail.s769161.fsnavigation.model.DirectoryItem;
+import de.bht.fpa.mail.s769161.fsnavigation.model.FileItem;
+import de.bht.fpa.mail.s769161.interfaces.ITreeObject;
+import de.bht.fpa.mail.s769161.interfaces.ITreeParent;
+import de.bht.fpa.mail.s769161.model.AbstractMessageListBuilder;
+
+public class XMLMessageListBuilder extends AbstractMessageListBuilder {
+
+	public XMLMessageListBuilder(ITreeParent treeParent) {
+		super(treeParent);
+	}
+
+	@Override
+	public void produceMessageList() {
+		if (treeParent instanceof DirectoryItem) {
+			JAXBContext context;
+			for (ITreeObject subFile : treeParent.getChildren()) {
+				if (subFile.getName().endsWith(".xml")) {
+					Message message;
+					try {
+						context = JAXBContext.newInstance(Message.class);
+						Unmarshaller u = context.createUnmarshaller();
+						message = (Message) u.unmarshal(subFile.getFile());
+						messages.addMessage(message);
+					} catch (JAXBException e) {
+						System.out.println("invalid xml format");
+					}
+				}
+			}
+		}
+	}
+}

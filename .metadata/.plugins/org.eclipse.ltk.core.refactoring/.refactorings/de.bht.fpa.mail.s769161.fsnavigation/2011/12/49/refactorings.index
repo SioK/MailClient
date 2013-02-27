@@ -1,0 +1,5 @@
+1323255694076	Extract local variable 'statusMsg'
+1323262767804	Move compilation unit
+1323263195363	Rename type 'MessageListBuilder'
+1323265996272	Rename type 'XMLMessageListBuilder'
+1323266028276	Rename package 'de.bht.fpa.mail.s769161.fsnavigation.builder'

@@ -1,0 +1,75 @@
+package de.bht.fpa.mail.s769161.imapnavigation.view;
+
+import java.util.Observable;
+
+
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.part.ViewPart;
+
+import de.bht.fpa.mail.common.SelectionHelper;
+import de.bht.fpa.mail.common.StatusBarHelper;
+
+import de.bht.fpa.mail.s769161.imapnavigation.IMAPNavigationViewContentProvider;
+import de.bht.fpa.mail.s769161.imapnavigation.IMAPNavigationViewLabelProvider;
+import de.bht.fpa.mail.s769161.imapnavigation.constants.IIMAPNavigationConstants;
+import de.bht.fpa.mail.s769161.imapnavigation.manager.ImapManager;
+import de.bht.fpa.mail.s769161.imapnavigation.model.AccountNode;
+import de.bht.fpa.mail.s769161.imapnavigation.model.ImapFolder;
+
+public class ImapNavigationView extends ViewPart implements
+		IIMAPNavigationConstants {
+
+	public static final String ID = IMAP_NAVIGATION_VIEW_ID;
+	private TreeViewer viewer;
+	
+
+	/**
+	 * This is a callback that will allow us to create the viewer and initialize
+	 * it.
+	 */
+	@Override
+	public void createPartControl(Composite parent) {
+
+		viewer = new TreeViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL
+				| SWT.BORDER);
+		viewer.setContentProvider(new IMAPNavigationViewContentProvider());
+		viewer.setLabelProvider(new IMAPNavigationViewLabelProvider());
+
+
+		viewer.setInput(new AccountNode("root"));
+
+		getSite().setSelectionProvider(viewer);
+
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				ImapFolder selFolder = SelectionHelper
+						.handleStructuredSelectionEvent(event, ImapFolder.class);
+				String statusMsg = selFolder.getName();
+				StatusBarHelper.getStatusLineManager().setMessage(statusMsg);
+			}
+
+		});
+	}
+	
+	/**
+	 * Passing the focus request to the viewer's control.
+	 */
+	@Override
+	public void setFocus() {
+		viewer.getControl().setFocus();
+	}
+
+	public void update(Observable o, Object arg) {
+		viewer.setInput(getAccountNode());
+	}
+	
+	public AccountNode getAccountNode() {
+		return ImapManager.getInstance().getAccountNode();
+	}
+}

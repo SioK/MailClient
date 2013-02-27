@@ -1,0 +1,83 @@
+package de.bht.fpa.mail.s769161.imapnavigation.handler;
+
+import java.util.List;
+
+import javax.mail.MessagingException;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
+
+import de.bht.fpa.mail.common.MailHelper;
+import de.bht.fpa.mail.common.PersistenceManager;
+import de.bht.fpa.mail.common.model.Account;
+import de.bht.fpa.mail.common.model.Folder;
+
+public class IMAPHandler {
+
+	public static void synchronizeFolders(Account account) {
+
+		System.out.println("begin pull");
+
+		EntityManager entityManager = getEntityManager();
+
+		try {
+			MailHelper.syncAllFolders(account, entityManager);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("Account: " + account);
+
+		entityManager.close();
+
+	}
+
+	public static Account createAccount(EntityManager entityManager, String name,
+			String host, String username, String password) {
+
+		Account account = MailHelper.getAccount(entityManager, name);
+		if (account == null) {
+			account = new Account();
+			account.setName(name);
+			account.setHost(host);
+			account.setUsername(username);
+			account.setPassword(password);
+
+			entityManager.getTransaction().begin();
+			entityManager.persist(account);
+			entityManager.getTransaction().commit();
+
+			System.out.println("Created new account");
+
+		} else {
+			System.out.println("Use existing account");
+
+		}
+		
+		return account;
+	}
+
+	public static EntityManager getEntityManager() {
+
+		EntityManagerFactory entityManagerFactory = PersistenceManager
+				.getInstance().createEntityManagerFactory();
+		EntityManager entityManager = entityManagerFactory
+				.createEntityManager();
+
+		return entityManager;
+
+	}
+	
+	public static boolean validateInput(String accountname, String host, String username, String password) {
+		 if(accountname != "" || host != "" || username != "" || password != "") {
+			 return true;
+		 }
+		 return false;
+	}
+
+}

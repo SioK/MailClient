@@ -1,0 +1,22 @@
+package de.bht.fpa.mail.s769161.statuslog;
+
+import de.bht.fpa.mail.common.StatusBarHelper;
+
+public class StatusBar implements IStatusBar {
+
+	private String id;
+
+	public StatusBar(String id) {
+		this.id = id;
+	}
+
+	@Override
+	public void setMessage(String message) {
+		StatusBarHelper.getStatusLineManager().setMessage(message);
+	}
+
+	@Override
+	public void setErrorMessage(String message) {
+		StatusBarHelper.getStatusLineManager().setErrorMessage(message)
+	}
+}
